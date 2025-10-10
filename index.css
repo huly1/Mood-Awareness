@@ -1,0 +1,425 @@
+:root {
+    --bg-dark: #201e4b;
+    --bg-light: #ece9e7;
+    --btn-primary: #d4a3e2;
+    --accent-purple: #9156f1;
+    --accent-green: #c6e7a3;
+    --text-dark: #333;
+    --text-light: #fff;
+    --danger-red: #e74c3c;
+    --success-green: #2ecc71;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--bg-dark);
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+#app {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--bg-light);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative; /* For positioning the language switcher */
+}
+
+.hidden {
+    display: none;
+}
+
+#language-switcher {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid var(--btn-primary);
+    color: var(--btn-primary);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    background-color: rgba(212, 163, 226, 0.2);
+}
+
+.lang-btn.active {
+    background-color: var(--btn-primary);
+    color: var(--text-light);
+    border-color: var(--btn-primary);
+}
+
+
+.page-subtitle {
+    font-family: 'Dancing Script', cursive;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #201e4b;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--bg-dark);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #f0b400;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.rating-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.rating-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--btn-primary);
+    background-color: transparent;
+    color: var(--btn-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rating-btn:hover {
+    background-color: var(--btn-primary);
+    color: var(--text-light);
+}
+
+.rating-btn.active {
+    background-color: var(--accent-purple);
+    color: var(--text-light);
+    border-color: var(--accent-purple);
+}
+
+.timer-section {
+    text-align: center;
+}
+
+#timer-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--bg-dark);
+    margin: 1rem 0;
+}
+
+#total-time-display {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.timer-controls button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--btn-primary);
+    color: var(--text-light);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.timer-controls button:hover {
+    background-color: var(--accent-purple);
+}
+
+.input-group {
+    margin-top: 1.5rem;
+}
+
+.input-group h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(145, 86, 241, 0.2);
+}
+
+.main-action-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-action-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--accent-purple);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    max-width: 320px;
+}
+
+.main-action-btn:hover:not(:disabled) {
+    background-color: #7a3ddb;
+}
+
+.main-action-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.secondary-action-btn {
+    background-color: transparent;
+    border: 2px solid var(--accent-purple);
+    color: var(--accent-purple);
+}
+
+.secondary-action-btn:hover:not(:disabled) {
+    background-color: rgba(145, 86, 241, 0.1);
+}
+
+
+/* Report View */
+#report-view {
+    text-align: center;
+}
+
+#report-view h1 {
+    margin-bottom: 1rem;
+}
+
+.report-summary {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.impact-score {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+}
+
+.impact-score.positive {
+    color: var(--success-green);
+}
+
+.impact-score.negative {
+    color: var(--danger-red);
+}
+
+.pie-chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem auto;
+}
+
+#ai-analysis {
+    text-align: left;
+    background-color: rgba(145, 86, 241, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+#ai-analysis p {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+#ai-analysis p:last-child {
+    margin-bottom: 0;
+}
+
+#ai-analysis strong {
+    color: var(--accent-purple);
+    font-weight: 600;
+}
+
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--accent-purple);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Breathing Exercise */
+.breathing-anim-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#breathing-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--btn-primary);
+    border-radius: 50%;
+    transform-origin: center center;
+}
+
+#breathing-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: var(--bg-dark);
+    font-weight: 500;
+    transition: opacity 0.5s ease;
+    margin: 0;
+}
+
+#breathing-circle.inhale {
+    animation: breathe-in 4s ease-out forwards;
+}
+
+#breathing-circle.hold {
+    transform: scale(3);
+}
+
+#breathing-circle.exhale {
+    animation: breathe-out 8s ease-out forwards;
+}
+
+#breathing-circle.idle {
+    transform: scale(1);
+    transition: transform 1s ease-out;
+}
+
+@keyframes breathe-in {
+    from { transform: scale(1); }
+    to { transform: scale(3); }
+}
+
+@keyframes breathe-out {
+    from { transform: scale(3); }
+    to { transform: scale(1); }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    #app {
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .rating-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    .timer-controls button {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    #timer-display {
+        font-size: 3rem;
+    }
+    #language-switcher {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    .lang-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
