@@ -9,8 +9,6 @@
     --danger-red: #e74c3c;
     --success-green: #2ecc71;
 }
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-
 
 * {
     box-sizing: border-box;
